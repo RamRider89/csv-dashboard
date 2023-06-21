@@ -1,0 +1,4 @@
+node_modules
+.htaccess
+./app/data/charts/*
+./app/uploads/*
