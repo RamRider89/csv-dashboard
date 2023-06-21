@@ -1,0 +1,242 @@
+[
+    {
+        "title": "BTC Enero 2023",
+        "user": "David Duarte",
+        "email": "hola@davdav.tech",
+        "description": "Historico Bitcoin Enero 2023",
+        "name": "File_1687216025.csv",
+        "location": ".\/app\/.\/uploads\/2023\/06\/",
+        "date": "2023-06-19",
+        "time": "05:07:05pm",
+        "typeOf": [
+            {
+                "index": "open",
+                "typeof": "number"
+            },
+            {
+                "index": "high",
+                "typeof": "number"
+            },
+            {
+                "index": "low",
+                "typeof": "number"
+            },
+            {
+                "index": "close",
+                "typeof": "number"
+            },
+            {
+                "index": "volume",
+                "typeof": "number"
+            },
+            {
+                "index": "marketCap",
+                "typeof": "number"
+            },
+            {
+                "index": "timestamp",
+                "typeof": "string"
+            }
+        ]
+    },
+    {
+        "title": "BTC Febrero 2023",
+        "user": "David Duarte",
+        "email": "hola@davdav.tech",
+        "description": "Historico Bitcoin Febrero 2023",
+        "name": "File_1687216227.csv",
+        "location": ".\/app\/.\/uploads\/2023\/06\/",
+        "date": "2023-06-19",
+        "time": "05:10:27pm",
+        "typeOf": [
+            {
+                "index": "open",
+                "typeof": "number"
+            },
+            {
+                "index": "high",
+                "typeof": "number"
+            },
+            {
+                "index": "low",
+                "typeof": "number"
+            },
+            {
+                "index": "close",
+                "typeof": "number"
+            },
+            {
+                "index": "volume",
+                "typeof": "number"
+            },
+            {
+                "index": "marketCap",
+                "typeof": "number"
+            },
+            {
+                "index": "timestamp",
+                "typeof": "string"
+            }
+        ]
+    },
+    {
+        "title": "BTC Marzo 2023",
+        "user": "David Duarte",
+        "email": "hola@davdav.tech",
+        "description": "Historico Bitcoin Marzo 2023",
+        "name": "File_1687216270.csv",
+        "location": ".\/app\/.\/uploads\/2023\/06\/",
+        "date": "2023-06-19",
+        "time": "05:11:10pm",
+        "typeOf": [
+            {
+                "index": "open",
+                "typeof": "number"
+            },
+            {
+                "index": "high",
+                "typeof": "number"
+            },
+            {
+                "index": "low",
+                "typeof": "number"
+            },
+            {
+                "index": "close",
+                "typeof": "number"
+            },
+            {
+                "index": "volume",
+                "typeof": "number"
+            },
+            {
+                "index": "marketCap",
+                "typeof": "number"
+            },
+            {
+                "index": "timestamp",
+                "typeof": "string"
+            }
+        ]
+    },
+    {
+        "title": "BTC Abril 2023",
+        "user": "David Duarte",
+        "email": "hola@davdav.tech",
+        "description": "Historico Bitcoin Abril 2023",
+        "name": "File_1687216304.csv",
+        "location": ".\/app\/.\/uploads\/2023\/06\/",
+        "date": "2023-06-19",
+        "time": "05:11:44pm",
+        "typeOf": [
+            {
+                "index": "open",
+                "typeof": "number"
+            },
+            {
+                "index": "high",
+                "typeof": "number"
+            },
+            {
+                "index": "low",
+                "typeof": "number"
+            },
+            {
+                "index": "close",
+                "typeof": "number"
+            },
+            {
+                "index": "volume",
+                "typeof": "number"
+            },
+            {
+                "index": "marketCap",
+                "typeof": "number"
+            },
+            {
+                "index": "timestamp",
+                "typeof": "string"
+            }
+        ]
+    },
+    {
+        "title": "BTC Mayo 2023",
+        "user": "David Duarte",
+        "email": "hola@davdav.tech",
+        "description": "Historico Bitcoin Mayo 2023",
+        "name": "File_1687216342.csv",
+        "location": ".\/app\/.\/uploads\/2023\/06\/",
+        "date": "2023-06-19",
+        "time": "05:12:22pm",
+        "typeOf": [
+            {
+                "index": "open",
+                "typeof": "number"
+            },
+            {
+                "index": "high",
+                "typeof": "number"
+            },
+            {
+                "index": "low",
+                "typeof": "number"
+            },
+            {
+                "index": "close",
+                "typeof": "number"
+            },
+            {
+                "index": "volume",
+                "typeof": "number"
+            },
+            {
+                "index": "marketCap",
+                "typeof": "number"
+            },
+            {
+                "index": "timestamp",
+                "typeof": "string"
+            }
+        ]
+    },
+    {
+        "title": "BTC Junio 2023",
+        "user": "David Duarte",
+        "email": "hola@davdav.tech",
+        "description": "Historico Bitcoin Junio 2023",
+        "name": "File_1687216392.csv",
+        "location": ".\/app\/.\/uploads\/2023\/06\/",
+        "date": "2023-06-19",
+        "time": "05:13:12pm",
+        "typeOf": [
+            {
+                "index": "open",
+                "typeof": "number"
+            },
+            {
+                "index": "high",
+                "typeof": "number"
+            },
+            {
+                "index": "low",
+                "typeof": "number"
+            },
+            {
+                "index": "close",
+                "typeof": "number"
+            },
+            {
+                "index": "volume",
+                "typeof": "number"
+            },
+            {
+                "index": "marketCap",
+                "typeof": "number"
+            },
+            {
+                "index": "timestamp",
+                "typeof": "string"
+            }
+        ]
+    }
+]
