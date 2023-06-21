@@ -1,0 +1,303 @@
+:root {
+    --c-progress-bar-size: 140px;
+    --c-progress-bar-stroke-width: 6
+}
+
+.c-progress-bar {
+    width: var(--c-progress-bar-size)
+}
+
+.c-progress-bar__shape {
+    width: 100%;
+    position: relative
+}
+
+.c-progress-bar__shape svg {
+    display: block;
+    width: var(--c-progress-bar-size);
+    height: var(--c-progress-bar-size);
+    stroke-width: var(--c-progress-bar-stroke-width)
+}
+
+.c-progress-bar__bg {
+    stroke: currentColor;
+    opacity: .125
+}
+
+.c-progress-bar__fill {
+    stroke: currentColor
+}
+
+.c-progress-bar__value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%)
+}
+
+.c-progress-bar__value i {
+    font-size: .65em
+}
+
+.c-progress-bar:not(.c-progress-bar--init) .c-progress-bar__fill,
+.c-progress-bar:not(.c-progress-bar--init) .c-progress-bar__value {
+    visibility: hidden
+}
+
+.c-progress-bar--color-update {
+    --c-progress-bar-color-1: 30;
+    --c-progress-bar-color-2: 65;
+    --c-progress-bar-color-3: 100
+}
+
+.c-progress-bar--color-update.c-progress-bar--init .c-progress-bar__fill {
+    transition: stroke .2s
+}
+
+.c-progress-bar--fill-color-1 .c-progress-bar__fill {
+    stroke: var(--color-error)
+}
+
+.c-progress-bar--fill-color-2 .c-progress-bar__fill {
+    stroke: var(--color-warning)
+}
+
+.c-progress-bar--fill-color-3 .c-progress-bar__fill {
+    stroke: var(--color-success)
+}
+
+.ddf__area {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px dashed hsl(0deg 0% 61.31%);
+    background-color: #fff;
+    transition: .3s
+}
+
+.ddf__area:hover {
+    border-color: var(--color-contrast-medium)
+}
+
+.ddf__label {
+    cursor: pointer
+}
+
+.ddf__label::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    cursor: inherit
+}
+
+.ddf__icon-cloud *:nth-child(2) {
+    transition: fill .3s;
+    fill: var(--color-bg-dark)
+}
+
+.ddf__label-end {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none
+}
+
+.ddf__label-inner,
+.ddf__label-end-inner {
+    transition: opacity .3s, transform .3s var(--ease-out)
+}
+
+.ddf__label-end-inner {
+    opacity: 0;
+    transform: translateY(25px)
+}
+
+.ddf__icon-file {}
+
+.ddf__icon-file *:nth-child(1),
+.ddf__icon-file *:nth-child(2) {
+    transform-origin: 32px 50px;
+    opacity: 0;
+    transition: opacity .3s, transform .5s var(--ease-out)
+}
+
+.ddf__icon-file *:nth-child(1) {
+    transform: rotate(15deg)
+}
+
+.ddf__icon-file *:nth-child(2) {
+    transform: rotate(-15deg)
+}
+
+.ddf__area--file-hover,
+.ddf__area:focus-within {
+    border-color: var(--color-primary);
+    background-color: var(--color-bg)
+}
+
+.ddf__area--file-hover .ddf__icon-cloud,
+.ddf__area:focus-within .ddf__icon-cloud {
+    color: var(--color-primary)
+}
+
+.ddf__area--file-hover .ddf__icon-cloud *:nth-child(2),
+.ddf__area:focus-within .ddf__icon-cloud *:nth-child(2) {
+    fill: var(--color-bg)
+}
+
+.ddf__area--file-hover .ddf__icon-cloud *:nth-child(2) {
+    animation: ddf-icon-cloud 1s infinite;
+    transform-origin: 32px 32px
+}
+
+.ddf__area--file-dropped {}
+
+.ddf__area--file-dropped .ddf__label-inner {
+    opacity: 0;
+    transform: translateY(-25px)
+}
+
+.ddf__area--file-dropped .ddf__label-end-inner {
+    opacity: 1;
+    transform: translateY(0px)
+}
+
+.ddf__area--file-dropped .ddf__icon-file *:nth-child(1),
+.ddf__area--file-dropped .ddf__icon-file *:nth-child(2) {
+    opacity: .7;
+    transform: rotate(0deg)
+}
+
+.ddf__item {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg-light);
+    border-radius: var(--radius-md);
+    box-shadow: var(--inner-glow), var(--shadow-sm);
+    padding: var(--space-xs)
+}
+
+.ddf__item:not(:last-child) {
+    margin-bottom: var(--space-xs)
+}
+
+.ddf__file-name {
+    font-size: var(--text-sm);
+    margin-right: var(--space-xs)
+}
+
+.ddf__remove-btn {
+    background-color: var(--color-contrast-lower);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background .2s;
+    margin-left: auto;
+    flex-shrink: 0
+}
+
+.ddf__remove-btn:hover {
+    background-color: hsl(var(--color-contrast-lower-h), var(--color-contrast-lower-s), calc(var(--color-contrast-lower-l) * 0.95))
+}
+
+.ddf__remove-btn:focus {
+    outline: 2px solid hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.25);
+    outline-offset: 2px
+}
+
+.ddf__progress {
+    --c-progress-bar-size: 24px;
+    color: var(--color-primary);
+    flex-shrink: 0
+}
+
+.ddf__progress-circle-mask {
+    fill: var(--color-bg);
+    stroke: none;
+    transform-origin: 12px 12px
+}
+
+.ddf__progress-circle {
+    opacity: 0;
+    fill: currentColor
+}
+
+.ddf__progress-check {
+    opacity: 0;
+    stroke: var(--color-white);
+    stroke-dashoffset: 16;
+    stroke-dasharray: 17
+}
+
+.ddf__progress--complete {}
+
+.ddf__progress--complete .c-progress-bar__bg,
+.ddf__progress--complete .c-progress-bar__fill {
+    opacity: 0
+}
+
+.ddf__progress--complete .ddf__progress-circle {
+    opacity: 1
+}
+
+.ddf__progress--complete .ddf__progress-circle-mask {
+    transform: scale(0);
+    transition: transform .4s
+}
+
+.ddf__progress--complete .ddf__progress-check {
+    opacity: 1;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset .3s .4s, opacity 0s .4s
+}
+
+.ddf__area .ddf__progress {
+    --c-progress-bar-size: 32px
+}
+
+.ddf__area .ddf__progress-circle-mask {
+    fill: var(--color-bg-dark)
+}
+
+.ddf__label-end {
+    display: flex
+}
+
+@keyframes ddf-icon-cloud {
+
+    0%,
+    100% {
+        transform: translateY(0px)
+    }
+
+    50% {
+        transform: translateY(-4px)
+    }
+}
+
+
+/* icon */
+
+.icon--xl {
+    height: 64px;
+}
+
+.icon {
+    font-size: 1em;
+    display: inline-block;
+    color: inherit;
+    line-height: 1;
+    flex-shrink: 0;
+    max-width: initial;
+}

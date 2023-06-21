@@ -1,0 +1,27 @@
+.dataTable thead td,
+.dataTable thead th {
+    border-bottom-width: 2px;
+    font-weight: 800;
+    text-transform: capitalize;
+    background-color: #5a5c69;
+    color: #ffffff;
+    /* 080027 */
+}
+
+.dataTable tfoot td,
+.dataTable tfoot th {
+    border-bottom-width: 2px;
+    font-weight: 800;
+    text-transform: capitalize;
+    background-color: #5a5c69;
+    color: #ffffff;
+}
+
+
+.dataTable tbody tr:hover,
+.dataTable tbody td:hover {
+    cursor: pointer;
+    background-color: #f8f9fc;
+    /* f3f9ff */
+}
+
