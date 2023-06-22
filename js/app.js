@@ -1,5 +1,5 @@
 window.alert = function () { };
-localStorage.removeItem("fastSearch");
+const MINS_DELY_FST_SEARCH = 15;
 
 $("body").ready(function () {
     console.log("CSV Admin - 1.0 - Dashboard");
@@ -30,7 +30,7 @@ $("body").ready(function () {
 });
 
 function loadFunctionality() {
-    
+    let queryFastSearch;
 
     try {
         setLocalSideBarStyle()
@@ -39,22 +39,41 @@ function loadFunctionality() {
     }
 
     loadFastSearch();
-    $("#fastSearch").keyup(async function () {
-//        console.log({ x });
 
-        let query = JSON.parse(localStorage.getItem("fastSearch"));
+    $("#fastSearch").one("keyup", function (ev) {
+        ev.preventDefault();
+        queryFastSearch = JSON.parse(localStorage.getItem("fastSearch"));
+    });
 
-        await Promise.all(query.map(async (file) => {
 
+    $("#fastSearch").keyup(async function (ev) {
+        ev.preventDefault();
+        if (this.value.length < 3) {
+            $("#fastSearchResults").html('');
+            return;
+        }
+
+        let diffMinutes;
+        if (queryFastSearch != null) {
+            diffMinutes = moment(queryFastSearch.date).diff(moment(), 'minutes')
             
+            if (diffMinutes > MINS_DELY_FST_SEARCH) {
+                loadFastSearch();
+                queryFastSearch = JSON.parse(localStorage.getItem("fastSearch"));
+            }
+        }
+        
+        let queryArray = new Array();
+        await Promise.all(queryFastSearch.data.map(async (file) => {
 
-            if (file.title.search(this.value)) {
-                console.log(true);
-                console.log(file.title);
-            } else { console.log(true); }
+            if (file.title.toLowerCase().includes(this.value.toLowerCase())) {
+                queryArray.push(file);
+            } else { }
 
         }));
 
+        //console.log(queryArray);
+        showResultsFastSearch(queryArray);
     });
 
 
@@ -127,10 +146,30 @@ function loadFunctionality() {
         }, 1000, 'easeInOutExpo');
         e.preventDefault();
     });
+
+    $(document).on('click', function (e) {
+        $("#fastSearchResults").removeClass('show');
+    });
+
+    $("#fastSearchResults").on('click', function (e) {
+        e.preventDefault();
+    });
+
+    
     
 }
 
 function loadFastSearch() {
+    let dataJsons = localStorage.getItem("fastSearch");
+    dataJsons = dataJsons ? JSON.parse(dataJsons) : [];
+
+    let diffMinutes;
+    if (dataJsons.length > 0) {
+        diffMinutes = moment(dataJsons.date).diff(moment(), 'minutes');
+    }
+    if (diffMinutes < MINS_DELY_FST_SEARCH) {return;}
+    localStorage.removeItem("fastSearch");
+
     $.ajax({
         type: 'GET',
         url: './app/scandir.php',
@@ -153,11 +192,51 @@ function loadFastSearch() {
 
 }
 
+function showResultsFastSearch(query) {
+    let html_string = '';
+    let html_bottom = `<a class="dropdown-item text-center small text-gray-500" href="#">Todos los archivos</a>`;
+    $("#fastSearchResults").html('');
+    if (query.length < 1) {
+        html_string = `<a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="mr-3">
+                                    <div class="icon-circle bg-secondary ">
+                                        <i class="fas fa-file-csv text-white"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="small text-gray-500"></div>
+                                    <span class="font-weight-bold">Sin resultados.</span>
+                                </div>
+                            </a>`;
+        $("#fastSearchResults").append(html_string);
+    }else {
+        Promise.all(query.map((file) => {
+            html_string =  `<a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-secondary ">
+                                            <i class="fas fa-file-csv text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">` + file.date + `</div>
+                                        <span class="font-weight-bold">` + file.title + `</span>
+                                    </div>
+                                </a>`;
+
+            $("#fastSearchResults").append(html_string);
+
+        }));
+    }
+
+    $("#fastSearchResults").append(html_bottom);
+    $("#fastSearchResults").addClass('show');
+}
+
 function storeInLocalStorage(args) {
     let dataJsons = localStorage.getItem("fastSearch");
-    dataJsons = dataJsons ? JSON.parse(dataJsons) : [];
+    dataJsons = dataJsons ? JSON.parse(dataJsons) : { date: new Date(), data: []};
     args.forEach(index => {
-        dataJsons.push(index);
+        dataJsons['data'].push(index);
     });
     localStorage.setItem("fastSearch", JSON.stringify(dataJsons));
 }

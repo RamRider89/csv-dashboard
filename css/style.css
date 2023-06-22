@@ -11,11 +11,19 @@
     --text-4xl: clamp(3rem, calc(2.0625rem + 1.953125vw), 3.625rem);
 }
 
+canvas{
+    cursor: pointer;
+}
+
 .toast {
     position: absolute;
     top: 5rem;
     right: 10px;
     z-index: 1000;
+}
+
+.dropdown-menu-query {
+    left: auto;
 }
 
 .items-center {
@@ -164,7 +172,12 @@ nav.navbar {
 }
 
 
+@media (min-width: 768px) {
 
+    .chart-dash {
+            height: 32rem;
+        }
+}
 
 
 @keyframes bounce2 {

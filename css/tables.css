@@ -25,3 +25,13 @@
     /* f3f9ff */
 }
 
+
+#myLatestTable .dataTable thead td,
+#myLatestTable .dataTable thead th {
+    border-bottom-width: 2px;
+    font-weight: 800;
+    text-transform: capitalize;
+    background-color: #f8f9fc;
+    color: #000000;
+    /* 080027 */
+}

@@ -26,6 +26,15 @@ function loadNewGraphParams(fileCSV) {
             let columnX = $("#selectEjeX").val();
             let columnY = $("#selectEjeY").val();
             let typeGraph = $("#typeGraph").val();
+            let coloR = [];
+
+            let dynamicColors = function () {
+                // let r = Math.floor(Math.random() * 255);
+                // let g = Math.floor(Math.random() * 255);
+                // let b = Math.floor(Math.random() * 255);
+                // return "rgb(" + r + "," + g + "," + b + ", 0.7)";
+                return COLOR_CHARTS_PALETTE[Math.floor(Math.random() * COLOR_CHARTS_PALETTE.length)].color;
+            };
 
             let dataColumnX = [];
             let dataColumnY = [];
@@ -33,6 +42,7 @@ function loadNewGraphParams(fileCSV) {
             dataSelected.data.forEach(row => {
                 dataColumnX.push(row[columnX]);
                 dataColumnY.push(row[columnY]);
+                coloR.push(dynamicColors());
             });
 
             dataGraph = {
@@ -42,7 +52,8 @@ function loadNewGraphParams(fileCSV) {
                 columnX: columnX,
                 columnY: columnY,
                 labels: dataColumnX,
-                dataset: dataColumnY
+                dataset: dataColumnY,
+                backgroundColor: coloR
             }
 
             localStorage.setItem("graphGenModal", JSON.stringify(dataGraph));
@@ -132,7 +143,7 @@ function chartTest(data) {
                 label: data.tittle,
                 fill: true,
                 lineTension: 0.05,
-                backgroundColor: '#36b9cc',
+                backgroundColor: data.backgroundColor,
                 borderColor: '#4e73df',
                 data: data.dataset
             }]

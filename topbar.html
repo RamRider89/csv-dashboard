@@ -13,11 +13,18 @@
                             <input id="fastSearch" type="text" class="form-control bg-light border-0 small" placeholder="Buscar..."
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
+                                <button class="btn btn-secondary" type="button" disabled>
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
+
                             </div>
                         </div>
+
+                            <!-- Dropdown - Alerts -->
+                            <div id="fastSearchResults" class="dropdown-list dropdown-menu dropdown-menu-query shadow animated--grow-in"
+                                aria-labelledby="fastSearch">
+                                <!-- results -->
+                            </div>
                     </form>
 
                     <!-- Topbar Navbar -->
@@ -38,7 +45,7 @@
                                             placeholder="Buscar..." aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
+                                            <button class="btn btn-secondary" type="button" disabled>
                                                 <i class="fas fa-search fa-sm"></i>
                                             </button>
                                         </div>

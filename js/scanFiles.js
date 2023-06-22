@@ -61,7 +61,7 @@ $("body").ready(function () {
                 if (file.hasOwnProperty(key)) {
                     // Mostrando en pantalla la clave junto a su valor
                     //console.log("La clave es " + clave + " y el valor es " + file[key]);
-                    $("#dataTable tbody > tr:last-of-type").append('<td>' + file[key] + '</td>');
+                    $("#dataTable tbody > tr:last-of-type").append('<td>' + file[key].toLocaleString(LOCALE_LANG) + '</td>');
                 }
             }
 
@@ -132,7 +132,7 @@ $("body").ready(function () {
                                                 for (let key in row) {
                                                     if (row.hasOwnProperty(key)) {
 
-                                                        $("#dataTableCSV > tbody > tr:last-of-type").append('<td>' + row[key] + '</td>');
+                                                        $("#dataTableCSV > tbody > tr:last-of-type").append('<td>' + row[key].toLocaleString(LOCALE_LANG) + '</td>');
                                                     }
                                                 }
                                             }

@@ -69,7 +69,7 @@ $.get("./components/typeofOptions.html", function (html_string) {
 
             for (let key in row) {
                 if (row.hasOwnProperty(key)) {
-                    $("#dataTableContent > tr:last-of-type").append('<td>' + row[key] + '</td>');
+                    $("#dataTableContent > tr:last-of-type").append('<td>' + row[key].toLocaleString(LOCALE_LANG) + '</td>');
                 }
             }
         }
