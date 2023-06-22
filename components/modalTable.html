@@ -1,0 +1,134 @@
+<!-- Modal -->
+<div class="modal fade" id="modalTable" tabindex="-1" role="dialog" aria-labelledby="modalTableLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTableLabel"><i class="fa fa-table"></i>Tabla</h5>
+        <button type="button" class="close closeModal" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="modalTableBody" class="modal-body">
+        <!-- Content Row -->
+
+        <!-- tabs -->
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link w-50 active" id="nav-table-tab" data-bs-toggle="tab" data-bs-target="#nav-table" type="button"
+              role="tab" aria-controls="nav-table" aria-selected="true">Tabla de datos</button>
+            <button class="nav-link w-50" id="nav-graph-tab" data-bs-toggle="tab" data-bs-target="#nav-graph" type="button"
+              role="tab" aria-controls="nav-graph" aria-selected="false">Graficas</button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-table" role="tabpanel" aria-labelledby="nav-table-tab">
+
+              <hr class="sidebar-divider d-md-block">
+
+              <div class="row">
+            
+                <div class="col-xl-12">
+                  <!-- DataTales -->
+                  <div class="table-responsive">
+                    <table id="dataTableCSV" class="display responsive nowrap" style="width:100%" aria-describedby="csv_info">
+                      <thead>
+                        <tr></tr>
+                      </thead>
+                      <tbody></tbody>
+                      <tfoot></tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+          <div class="tab-pane fade" id="nav-graph" role="tabpanel" aria-labelledby="nav-graph-tab">
+              <hr class="sidebar-divider d-md-block">
+
+              <p>Ingrese los datos para crear una grafica.</p>
+
+              <div class="row">
+                <div class="col-xl-3">
+                  <div class="form-group">
+                    <label for="eje-x">Titulo:</label>
+                    <input id="tittleGraph" class="form-control form-control-sm" name="tittleGraph" type="text">
+                  </div>
+                </div>
+
+                <div class="col-xl-3">
+                  <div class="form-group">
+                    <label for="eje-x">Columna eje x:</label>
+                    <select id="selectEjeX" class="form-control form-control-sm" name="selectEjeX" aria-describedby="help-eje-x">
+                      <option value="0">Seleccione una opción</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-xl-3">
+                  <div class="form-group">
+                    <label for="eje-y">Columna eje y:</label>
+                    <select id="selectEjeY" class="form-control form-control-sm" name="selectEjeY" aria-describedby="help-eje-y">
+                      <option value="0">Seleccione una opción</option>
+                    </select>
+                  </div>
+            
+                </div>
+
+                <div class="col-xl-3">
+                  <div class="form-group">
+                    <label for="eje-y">Tipo de gráfica:</label>
+                    <select id="typeGraph" class="form-control form-control-sm" name="typeGraph" aria-describedby="help-eje-y">
+                      <option value="bar">Barras</option>
+                      <option value="line">Linea</option>
+                      <option value="bubble">Burbuja</option>
+                      <option value="doughnut">Dona</option>
+                      <option value="pie">Pie</option>
+                      <option value="polarArea">Polar</option>
+                      <option value="radar">Radar</option>
+                      <option value="scatter">Scatter</option>
+                      
+                    </select>
+                  </div>
+                
+                </div>
+            
+              </div>
+
+              <div class="row">
+                  <div class="col-xl-8"></div>
+                  <div class="col-xl-2">
+                      <button type="button" id="btnGenGraph" class="btn btn-sm btn-dark w-100"><i class="fa fa-chart-simple"></i> Generar</button>
+                  </div>
+                  <div class="col-xl-2">
+                    <button type="button" id="btnSaveGenGraph" class="btn btn-sm btn-primary w-100" disabled><i class="fa fa-save"></i> Guardar</button>
+                  </div>
+              </div>
+
+              <hr>
+
+              <div class="row">
+                <div id="genGraphDiv" class="chart-area hidden">
+                    <canvas id="myChart" style="height:80px; width:520px"></canvas>
+                </div>
+                
+
+              </div>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+      
+
+      <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-secondary closeModal" data-bs-dismiss="modal">Cerrar</button>
+  
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
