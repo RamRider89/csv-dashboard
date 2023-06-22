@@ -25,6 +25,7 @@ if (isset($_POST['data'])) {
         $columnY = $jsonChartData["columnY"];
         $labels = $jsonChartData["labels"];
         $dataset = $jsonChartData["dataset"];
+        $backgroundColor = $jsonChartData["backgroundColor"];
 
         // Get the submitted form data         
         // Check whether submitted data is not empty 
@@ -55,6 +56,7 @@ if (isset($_POST['data'])) {
                             "columnY" => $columnY,
                             "labels" => $labels,
                             "dataset" => $dataset,
+                            "backgroundColor" => $backgroundColor,
                             "date" => date("Y-m-d"),
                             "time" => date("h:i:sa")
                     ];
