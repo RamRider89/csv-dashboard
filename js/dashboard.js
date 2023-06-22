@@ -270,7 +270,8 @@ $("body").ready(async function () {
                     maintainAspectRatio: '',
                     fontColor: '#000000'
                 },
-                responsive: true
+                responsive: true,
+                maintainAspectRatio: false
             }
         });
 

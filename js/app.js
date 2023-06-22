@@ -211,7 +211,7 @@ function showResultsFastSearch(query) {
         $("#fastSearchResults").append(html_string);
     }else {
         Promise.all(query.map((file) => {
-            html_string =  `<a class="dropdown-item d-flex align-items-center" href="#">
+            html_string =  `<a class="fastSearchResultItem dropdown-item d-flex align-items-center" href="#">
                                     <div class="mr-3">
                                         <div class="icon-circle bg-secondary ">
                                             <i class="fas fa-file-csv text-white"></i>
@@ -224,12 +224,17 @@ function showResultsFastSearch(query) {
                                 </a>`;
 
             $("#fastSearchResults").append(html_string);
+            $("a.fastSearchResultItem:last-of-type").on('click', function (ev) {
+                ev.preventDefault();
+                loadTable(file);
+            });
 
         }));
     }
 
     $("#fastSearchResults").append(html_bottom);
     $("#fastSearchResults").addClass('show');
+    
 }
 
 function storeInLocalStorage(args) {
@@ -239,6 +244,11 @@ function storeInLocalStorage(args) {
         dataJsons['data'].push(index);
     });
     localStorage.setItem("fastSearch", JSON.stringify(dataJsons));
+}
+
+function loadTable(table) {
+    localStorage.setItem("tableSelected", JSON.stringify(table));
+    window.location = 'table.html';
 }
 
 
