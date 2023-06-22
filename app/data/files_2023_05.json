@@ -1,1 +1,42 @@
-[]
+[
+    {
+        "title": "BTC Enero 2023",
+        "user": "David Duarte",
+        "email": "hola@davdav.tech",
+        "description": "Historico Bitcoin Enero 2023",
+        "name": "File_1687216025.csv",
+        "location": ".\/app\/.\/uploads\/2023\/06\/",
+        "date": "2023-06-19",
+        "time": "05:07:05pm",
+        "typeOf": [
+            {
+                "index": "open",
+                "typeof": "number"
+            },
+            {
+                "index": "high",
+                "typeof": "number"
+            },
+            {
+                "index": "low",
+                "typeof": "number"
+            },
+            {
+                "index": "close",
+                "typeof": "number"
+            },
+            {
+                "index": "volume",
+                "typeof": "number"
+            },
+            {
+                "index": "marketCap",
+                "typeof": "number"
+            },
+            {
+                "index": "timestamp",
+                "typeof": "string"
+            }
+        ]
+    }
+]
