@@ -6,6 +6,7 @@ $("body").ready(async function () {
     dataFile = dataFile ? JSON.parse(dataFile) : [];
 
     if (dataFile.length < 1) {
+        $("#dataTableCSV > thead > tr").append('<td>Seleccione un archivo en la barra de busqueda</td>');
         return;
     }
     loadData(dataFile);
@@ -72,7 +73,7 @@ $("body").ready(async function () {
                 $("#tittleTable").html(" " + dataFile.title);
                 setValueTypesOptions(dataFile.typeOf);
                 loadNewGraphParams(dataFile.name);
-
+                $("#genNewGraph").fadeIn();
 
             },
             error: function (request, status, error) {

@@ -140,9 +140,9 @@ $("body").ready(async function () {
     }
 
     function setValueTypesOptions(fileCSV) {
-        let dataJsons = JSON.parse(localStorage.getItem("fileList"));
+        let dataJsons = JSON.parse(localStorage.getItem("fastSearch"));
         let typeOfData = {};
-        Promise.all(dataJsons.map((file) => {
+        Promise.all(dataJsons['data'].map((file) => {
             if (file.name == fileCSV) {
                 typeOfData = file.typeOf;
                 return;

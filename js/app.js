@@ -1,6 +1,6 @@
 window.alert = function () { };
 const MINS_DELY_FST_SEARCH = 15;
-
+loadFastSearch();
 $("body").ready(function () {
     console.log("CSV Admin - 1.0 - Dashboard");
 
@@ -37,8 +37,6 @@ function loadFunctionality() {
     } catch (error) {
        console.warn("No local sidebar style..."); 
     }
-
-    loadFastSearch();
 
     $("#fastSearch").one("keyup", function (ev) {
         ev.preventDefault();
